@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertex Cover Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.23.0/cytoscape.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Vertex Cover Simulator</h1>
+            <p class="subtitle">Brute Force Algorithm Visualization</p>
+        </header>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="card">
+                    <h2>Graph Configuration</h2>
+                    <div class="form-group">
+                        <label for="vertexCount">Number of Vertices:</label>
+                        <input type="number" id="vertexCount" min="1" max="10" value="5">
+                    </div>
+                    <div class="form-group">
+                        <label for="edgesInput">Edges (one per line, format: "vertex1 vertex2"):</label>
+                        <textarea id="edgesInput" rows="6">0 1
+1 2
+2 3
+3 4
+0 4
+1 3</textarea>
+                    </div>
+                    <div class="button-group">
+                        <button id="runBtn" class="primary-btn">Run Algorithm</button>
+                        <button id="simulateBtn" class="secondary-btn">Start Simulation</button>
+                        <button id="nextBtn" class="secondary-btn" disabled>Next Step</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visualization-section">
+                <div class="card">
+                    <h2>Graph Visualization</h2>
+                    <div id="cy"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-section">
+            <div class="card">
+                <h2>Results</h2>
+                <div id="result" class="result-display">Run the algorithm to see results</div>
+                <div class="simulation-output">
+                    <h3>Simulation Steps</h3>
+                    <pre id="simOutput" class="code-block">Start the simulation to see steps</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="card">
+                <h2>About Vertex Cover</h2>
+                <p>A vertex cover of a graph is a set of vertices such that each edge of the graph is incident to at least one vertex in the set.</p>
+                <p>The minimum vertex cover problem is to find a vertex cover of minimum size.</p>
+                <p>This simulator uses a brute force approach to find the minimum vertex cover by checking all possible subsets of vertices.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Vertex Cover Simulator &copy; 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
